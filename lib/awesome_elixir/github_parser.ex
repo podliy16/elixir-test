@@ -1,4 +1,4 @@
-defmodule AwesomeElixir.Parser do
+defmodule AwesomeElixir.GithubParser do
   @moduledoc false
   use GenServer
   require Logger
@@ -9,7 +9,7 @@ defmodule AwesomeElixir.Parser do
 
   def init(_) do
     schedule_work()
-    Logger.info("create");
+    Logger.info("create")
     {:ok, %{}}
   end
 

@@ -46,7 +46,9 @@ defmodule AwesomeElixir.MixProject do
       {:httpoison, "~> 1.5"},
       {:earmark, "~> 1.2"},
       {:mox, "~> 0.5", only: :test},
-      {:mock, "~> 0.3.0", only: :test}
+      {:mock, "~> 0.3.0", only: :test},
+      {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false},
+      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false}
     ]
   end
 

@@ -18,7 +18,7 @@ defmodule Github.Parser do
       |> Enum.drop_while(&drop_until_libs/1)
       |> Enum.chunk_every(3)
       |> parse_libs_chunks
-      |> Enum.take(1)
+      #  |> Enum.take(1)
 
     {:ok, parsed_data}
   end

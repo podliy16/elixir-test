@@ -1,5 +1,6 @@
 defmodule Github.Fetcher.Test do
   use ExUnit.Case, async: false
+  @moduletag :unit
   import Mock
 
   test "Get successfull response from github" do
