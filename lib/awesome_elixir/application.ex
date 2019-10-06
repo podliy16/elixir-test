@@ -1,6 +1,4 @@
 defmodule AwesomeElixir.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   @moduledoc false
 
   use Application
@@ -9,7 +7,7 @@ defmodule AwesomeElixir.Application do
     children = [
       AwesomeElixir.Repo,
       AwesomeElixirWeb.Endpoint,
-      AwesomeElixir.Parser
+      AwesomeElixir.GithubCron
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

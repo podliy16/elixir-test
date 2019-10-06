@@ -1,4 +1,4 @@
-defmodule AwesomeElixir.GithubParser do
+defmodule AwesomeElixir.GithubCron do
   @moduledoc false
   use GenServer
   require Logger
@@ -8,18 +8,18 @@ defmodule AwesomeElixir.GithubParser do
   end
 
   def init(_) do
+    AwesomeElixir.GithubUpdater.update()
     schedule_work()
-    Logger.info("create")
     {:ok, %{}}
   end
 
   def handle_info(:parse, _) do
     schedule_work()
-    #Logger.info("work")
+    AwesomeElixir.GithubUpdater.update()
     {:noreply, :ok}
   end
 
-  @daily 24 * 60 * 60 * 1000
+  # @daily 24 * 60 * 60 * 1000
   @every_5_seconds 5 * 1000
   defp schedule_work do
     Process.send_after(self(), :parse, @every_5_seconds)

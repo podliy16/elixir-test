@@ -1,0 +1,11 @@
+<div class="category">
+  <h2 id="<%= @category.name %>">
+    <%= @category.name %>
+  </h2>
+  <p><%= @category.description %></p>
+  <ul>
+    <%= for lib <- @category.libs do %>
+      <%= render("lib.html", lib: lib) %>
+    <% end %>
+  </ul>
+</div>

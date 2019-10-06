@@ -16,3 +16,5 @@ config :awesome_elixir, AwesomeElixirWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :awesome_elixir, retry_sleep: 0

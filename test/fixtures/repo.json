@@ -1,0 +1,22 @@
+{
+  "data": {
+    "repository": {
+      "stargazers": {
+        "totalCount": 171
+      },
+      "defaultBranchRef": {
+        "target": {
+          "history": {
+            "edges": [
+              {
+                "node": {
+                  "committedDate": "2019-10-04T18:48:23Z"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

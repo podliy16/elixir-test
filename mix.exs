@@ -10,7 +10,11 @@ defmodule AwesomeElixir.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [
+        "test.system": :system_test
+      ]
+      # elixirc_options: [warnings_as_errors: true]
     ]
   end
 
@@ -26,6 +30,7 @@ defmodule AwesomeElixir.MixProject do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:system_test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -45,10 +50,11 @@ defmodule AwesomeElixir.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.5"},
       {:earmark, "~> 1.2"},
-      {:mox, "~> 0.5", only: :test},
-      {:mock, "~> 0.3.0", only: :test},
+      {:mock, "~> 0.3.0", only: [:test, :system_test]},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false},
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.1.0", only: :dev, runtime: false},
+      {:poison, "~> 3.1"},
+      {:meck, "~> 0.8.2", only: [:test, :system_test]}
     ]
   end
 

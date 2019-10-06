@@ -1,0 +1,7 @@
+<li class="lib <%= lib_class(@lib) %>">
+  <a class="repo" href="<%= @lib.link %>"><%= @lib.name %></a>
+  ⭐<sub><%=@lib.stars_count %></sub>
+  📅<sub><%=last_commit_in_days(@lib) %></sub>
+  — 
+  <span class="desc"><%= @lib.description %></p>
+</li>

@@ -25,6 +25,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+github_token = System.get_env("GITHUB_TOKEN") || ""
+config :awesome_elixir, github_token: github_token
+
+config :awesome_elixir, retry_sleep: 30_000
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
