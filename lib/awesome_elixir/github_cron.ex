@@ -21,7 +21,7 @@ defmodule AwesomeElixir.GithubCron do
 
   @daily 24 * 60 * 60 * 1000
   defp schedule_work do
-    Process.send_after(self(), :parse, @every_5_seconds)
+    Process.send_after(self(), :parse, @daily)
     Process
   end
 end
