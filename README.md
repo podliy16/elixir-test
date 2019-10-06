@@ -1,19 +1,13 @@
-# AwesomeElixir
+# Тесты
 
-To start your Phoenix server:
+Тесты разделены на системные и юнит-тесты.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+Запустить юнит тесты:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+`mix test --only unit`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+Запустить системные тесты:
 
-## Learn more
+`MIX_ENV=system_test GITHUB_TOKEN= mix test --only system`
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+Для работы приложения нужен Access Token гитхаба (https://github.com/settings/tokens).
